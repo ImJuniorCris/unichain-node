@@ -1,44 +1,29 @@
-# Unichain Node
+# UnichainNode
 
-![image](logo.png)
+UnichainNode is a node implementation for the Unichain distributed ledger or blockchain network.
 
-This repository contains the relevant configuration to run your own node on the Unichain network.
+## Features
 
-### Troubleshooting
+- Connects to other Unichain nodes for decentralized communication
+- Syncs and maintains the Unichain blockchain/ledger
+- Provides APIs for interacting with the Unichain network
 
-If you encounter problems with your node, please open a [GitHub issue](https://github.com/Uniswap/unichain-node/issues)
+## Getting Started
 
-### Supported Networks
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/TartarusDevtech/UnichainNode.git
+   ```
+2. Install dependencies (add instructions for your language/environment here).
+3. Run the node:
+   ```bash
+   # Add your run instructions here
+   ```
 
-| Network      | Status |
-|-------------------| ------ |
-| Mainnet | ✅     |
-| Testnet (Sepolia) | ✅     |
+## Contributing
 
+Contributions are welcome! Please open issues or submit pull requests.
 
-### Usage
+## License
 
-1. Ensure you have an Ethereum L1 full node RPC available, and set `OP_NODE_L1_ETH_RPC` & `OP_NODE_L1_BEACON` (in the `.env.mainnet` file). If running your own L1 node, it needs to be synced before Unichain will be able to fully sync.
-2. Select your network in the docker compose file by uncommenting .env.sepolia or .env.mainnet in both op-node and the execution client.
-3. Run:
-
-```
-docker compose up -d
-```
-
-4. You should now be able to `curl` your Unichain node:
-
-```
-curl -d '{"id":1,"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["latest",false]}' \
-  -H "Content-Type: application/json" http://localhost:8545
-```
-
-5. To stop your node, run:
-```
-docker compose down
-```
-
-#### Persisting Data
-
-By default, the data directory is stored in `${PROJECT_ROOT}/geth-data`. You can override this by modifying the value of
-`HOST_DATA_DIR` variable in the [`.env`](./.env) file.
+This project is licensed under the terms of the MIT license.
